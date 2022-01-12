@@ -3,6 +3,8 @@ import numpy as np #for handling arrays
 import matplotlib.pyplot as plt #for plotting images
 import matplotlib.image as mpimg #for reading images
 
+DIR = #Enter file location of image to be processed here
+
 def pad(img, num): #adds layers of zeros so that filter can detect border features
     w = img.shape[0] #image width
     h = img.shape[1] #image height
@@ -253,7 +255,7 @@ def comparisonPlot(img, n1, n2, n3, n4): #plots a side-by-side of four different
 
 def main(): #master function to manage subfunctions above, read, and write
     #read in the original image
-    originalImg = mpimg.imread("C:/Users/joshu/Desktop/Onboard Code/Python/XRays/CovidPos.png")
+    originalImg = mpimg.imread(DIR)
     plt.imshow(originalImg) #plots the original image
 
     img = originalImg[:, :, 0] #gets one layer of the image since it is black and white
